@@ -37,9 +37,24 @@ $zIndex-moon: 4;
             max-width: 40%;
         }
 
-        // @media screen and (max-width: ) {
+        @media screen and (max-width: $mobile-width) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: 100vw;
 
-        // }
+            h1 {
+                z-index: 10;
+                font-size: 64px;
+                line-height: 4rem;
+            }
+
+            p {
+                z-index: 10;
+                max-width: 90%;
+            }
+        }
     }
 
 }
@@ -112,8 +127,8 @@ $zIndex-moon: 4;
     transform: translateX(-52%);
 
     @media screen and (max-width: $mobile-width) {
-        height: 70dvh;
-        // bottom: 5%;
+        height: 80dvh;
+        bottom: -15%;
     }
 }
 

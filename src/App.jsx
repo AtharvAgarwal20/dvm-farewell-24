@@ -89,8 +89,8 @@ function App() {
         />
         <section className={styles.content}>
           <h1>Farewell<br />2024</h1>
-          <Card />
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio iusto reiciendis eligendi id, amet distinctio nihil expedita sapiente enim sit perferendis facilis nisi quae dolorem iste. Earum vel aperiam optio.</p>
+          <Card />
         </section>
       </main>
     </>

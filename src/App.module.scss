@@ -1,0 +1,86 @@
+$mobile-width: 760px;
+
+.page {
+    background-color: rgb(0, 0, 30);
+    width: 100vw;
+    height: 100dvh;
+}
+
+.gridLeft,
+.gridRight,
+.stars,
+.bitsPilani,
+.shadowRect,
+.moon,
+.dvmLogo {
+    position: fixed;
+}
+
+.gridLeft,
+.gridRight {
+    width: auto;
+    height: 100dvh;
+    z-index: 1;
+
+    @media screen and (max-width: $mobile-width) {
+        width: 40vw;
+    }
+}
+
+.gridLeft {
+    left: 0px;
+}
+
+.gridRight {
+    right: 0px;
+}
+
+.stars,
+.shadowRect {
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+.stars {
+    z-index: 2;
+}
+
+@mixin alignCenterHorizontal() {
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.bitsPilani {
+    height: 60dvh;
+    width: auto;
+    bottom: 0px;
+    z-index: 4;
+    @include alignCenterHorizontal();
+
+    @media screen and (max-width: $mobile-width) {
+        transform: translateX(-49%);
+        height: 50dvh;
+    }
+}
+
+.moon {
+    height: 90dvh;
+    width: auto;
+    z-index: 3;
+    bottom: 1%;
+    @include alignCenterHorizontal();
+    transform: translateX(-52%);
+
+    @media screen and (max-width: $mobile-width) {
+        height: 70dvh;
+        // bottom: 5%;
+    }
+}
+
+.dvmLogo {
+    z-index: 5;
+    @include alignCenterHorizontal();
+    top: 5dvh;
+}

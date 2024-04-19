@@ -2,6 +2,7 @@
 
 $mobile-width: 1040px;
 $zIndex-moon: 4;
+$xs: 450px;
 
 .page {
     background-color: rgb(0, 0, 30);
@@ -55,8 +56,25 @@ $zIndex-moon: 4;
                 max-width: 90%;
             }
         }
+
+        @media screen and (max-width: $xs) {
+            h1 {
+                margin-top: 0;
+            }
+
+            p {
+                margin-top: 0;
+            }
+        }
     }
 
+    @media screen and (max-width: $xs) {
+        align-items: flex-start;
+
+        .content {
+            margin-top: 30vw;
+        }
+    }
 }
 
 .gridLeft,
@@ -114,7 +132,8 @@ $zIndex-moon: 4;
 
     @media screen and (max-width: $mobile-width) {
         transform: translateX(-49%);
-        height: 50dvh;
+        height: 43dvh;
+        // bottom: -8%;
     }
 }
 
@@ -128,7 +147,7 @@ $zIndex-moon: 4;
 
     @media screen and (max-width: $mobile-width) {
         height: 80dvh;
-        bottom: -15%;
+        bottom: -20%;
     }
 }
 
@@ -136,4 +155,8 @@ $zIndex-moon: 4;
     z-index: calc($zIndex-moon + 2);
     @include alignCenterHorizontal();
     top: 5dvh;
+
+    @media screen and (max-width: 450px) {
+        width: 80vw;
+    }
 }

@@ -1,0 +1,15 @@
+.loader {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    width: 100vw;
+    z-index: 1000;
+    position: fixed;
+
+    h1 {
+        font-size: 48px;
+    }
+}

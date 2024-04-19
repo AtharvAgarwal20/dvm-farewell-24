@@ -16,7 +16,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight]
+    const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight, shadowRectangle]
 
     const loadAssets = async () => {
       try {

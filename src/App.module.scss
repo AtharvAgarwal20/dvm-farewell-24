@@ -1,9 +1,45 @@
-$mobile-width: 760px;
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+$mobile-width: 1040px;
+$zIndex-moon: 4;
 
 .page {
     background-color: rgb(0, 0, 30);
     width: 100vw;
     height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .content {
+        font-family: "Space Grotesk", sans-serif;
+        color: white;
+        display: grid;
+        grid-template-columns: 1fr 0.86fr;
+        grid-template-rows: 1fr 1fr;
+        width: 80vw;
+        height: 60dvh;
+        row-gap: 2rem;
+
+        h1 {
+            z-index: calc($zIndex-moon - 1);
+            font-weight: 700;
+            // font-size: 100px;
+            // font-size: 8vw;
+            line-height: 7rem;
+            font-size: clamp(100px, 8vw, 130px);
+            margin-top: 2rem;
+        }
+
+        p {
+            max-width: 40%;
+        }
+
+        // @media screen and (max-width: ) {
+
+        // }
+    }
+
 }
 
 .gridLeft,
@@ -56,7 +92,7 @@ $mobile-width: 760px;
     height: 60dvh;
     width: auto;
     bottom: 0px;
-    z-index: 4;
+    z-index: calc($zIndex-moon + 1);
     @include alignCenterHorizontal();
 
     @media screen and (max-width: $mobile-width) {
@@ -68,7 +104,7 @@ $mobile-width: 760px;
 .moon {
     height: 90dvh;
     width: auto;
-    z-index: 3;
+    z-index: $zIndex-moon;
     bottom: 1%;
     @include alignCenterHorizontal();
     transform: translateX(-52%);
@@ -80,7 +116,7 @@ $mobile-width: 760px;
 }
 
 .dvmLogo {
-    z-index: 5;
+    z-index: calc($zIndex-moon + 2);
     @include alignCenterHorizontal();
     top: 5dvh;
 }

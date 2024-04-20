@@ -9,15 +9,19 @@ import gridLeft from './assets/Grid left.png'
 import gridRight from './assets/Grid right.png'
 import shadowRectangle from './assets/Shadow rect.png'
 import shadowCentre from './assets/shadowCentre.png'
+import Card1 from './assets/Card1.png'
 
 import Loader from './components/Loader/Loader'
 import Card from './components/Card/Card'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
+  const [seniorIndex, setSeniorIndex] = useState(0)
+
+  const seniorsArray = [Card1]
 
   useEffect(() => {
-    const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight]
+    const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight, Card1]
 
     const loadAssets = async () => {
       try {
@@ -97,8 +101,9 @@ function App() {
         <section className={styles.content}>
           <h1>Farewell<br />2024</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio iusto reiciendis eligendi id, amet distinctio nihil expedita sapiente enim sit perferendis facilis nisi quae dolorem iste. Earum vel aperiam optio.</p>
-          <Card />
+          <Card senior={seniorsArray[seniorIndex]} />
         </section>
+        <footer>Made with ❤️ by DVM</footer>
       </main>
     </>
   )

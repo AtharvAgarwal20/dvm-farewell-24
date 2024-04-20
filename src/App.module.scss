@@ -12,17 +12,17 @@ $xs: 450px;
     justify-content: center;
     align-items: center;
 
+    font-family: "Space Grotesk", sans-serif;
+    color: white;
+
     .content {
-        font-family: "Space Grotesk", sans-serif;
-        color: white;
         display: grid;
         grid-template-columns: 1fr 0.86fr;
         grid-template-rows: 1fr 1fr;
         width: 80vw;
         height: 60dvh;
         row-gap: 2rem;
-        // column-gap: 20rem;
-        // column-gap: clamp(0px, 25%, 20rem);
+        // column-gap: 10rem;
 
         h1 {
             z-index: calc($zIndex-moon - 1);
@@ -36,6 +36,7 @@ $xs: 450px;
 
         p {
             z-index: calc($zIndex-moon - 1);
+            font-weight: 500;
             max-width: 40%;
         }
 
@@ -54,7 +55,8 @@ $xs: 450px;
 
             p {
                 z-index: 10;
-                max-width: 90%;
+                font-size: 14px;
+                max-width: 80%;
             }
         }
 
@@ -81,7 +83,20 @@ $xs: 450px;
         align-items: flex-start;
 
         .content {
-            margin-top: 35vw;
+            margin-top: 7rem;
+        }
+    }
+
+    footer {
+        visibility: hidden;
+        z-index: 1000;
+        font-weight: 500;
+        font-size: 16px;
+        position: fixed;
+        bottom: 1.5rem;
+
+        @media screen and (max-width: $mobile-width) {
+            visibility: visible;
         }
     }
 
@@ -154,9 +169,8 @@ $xs: 450px;
     @include alignCenterHorizontal();
 
     @media screen and (max-width: $mobile-width) {
-        transform: translateX(-49%);
+        transform: translateX(-49%) translateY(0.5rem);
         height: 46dvh;
-        // bottom: -8%;
     }
 }
 
@@ -183,7 +197,7 @@ $xs: 450px;
         width: 18rem;
     }
 
-    @media screen and (max-width: 450px) {
-        width: 80vw;
+    @media screen and (max-width: $xs) {
+        width: 13rem;
     }
 }

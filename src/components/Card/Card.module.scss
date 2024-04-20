@@ -1,9 +1,30 @@
+$mobile-width: 1040px;
+$xs: 450px;
+
 .card {
     grid-row: 1 / -1;
     grid-column: 2;
     z-index: 10;
     margin-top: 2rem;
+    margin-right: 2rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-start;
+    // position: fixed;
+
+    img {
+        width: auto;
+        height: 100%;
+
+    }
+
+    @media screen and (max-width: 1120px) {
+        align-items: center;
+        margin: 0;
+
+        img {
+            height: auto;
+            width: 20rem;
+        }
+    }
 }

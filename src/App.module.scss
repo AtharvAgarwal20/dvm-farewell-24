@@ -100,12 +100,12 @@ $xs: 450px;
         }
 
         @media screen and (max-height: 785px) {
-            bottom: 0.5rem;
+            bottom: 1rem;
         }
 
-        @media screen and (max-height: 770px) {
-            bottom: clamp(0.5rem, 2dvh, 2rem);
-        }
+        // @media screen and (max-height: 770px) {
+        //     bottom: clamp(0.5rem, 2dvh, 2rem);
+        // }
     }
 
 }
@@ -140,12 +140,6 @@ $xs: 450px;
     right: 0px;
 }
 
-.shadowRect {
-    width: 100vw;
-    height: 100vh;
-    z-index: 2;
-}
-
 .stars {
     width: 100vw;
     height: 100vh;
@@ -158,6 +152,17 @@ $xs: 450px;
 
 }
 
+.shadowRect {
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+
+    @media screen and (max-width: $xs) {
+        width: 50vw;
+        @include alignCenterHorizontal();
+    }
+}
+
 .shadowCentre {
     @include alignCenterHorizontal();
     height: 100dvh;
@@ -167,6 +172,10 @@ $xs: 450px;
     @media screen and (max-width: $mobile-width) {
         width: 60vw;
     }
+
+    // @media screen and (max-width: $xs) {
+    //     width: 20vw;
+    // }
 }
 
 .bitsPilani {

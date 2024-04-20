@@ -7,3 +7,21 @@
 body {
     overflow: hidden;
 }
+
+@media (min-resolution: 1dppx) and (max-resolution: 1.49dppx) and (min-width: 1040px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media (min-resolution: 1.5dppx) and (max-resolution: 1.74dppx) and (min-width: 1040px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (min-resolution: 1.75dppx) and (max-resolution: 2dppx) and (min-width: 1040px) {
+    html {
+        font-size: 8px;
+    }
+}

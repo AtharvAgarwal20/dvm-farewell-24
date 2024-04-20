@@ -19,8 +19,10 @@ $xs: 450px;
         display: grid;
         grid-template-columns: 1fr 0.86fr;
         grid-template-rows: 1fr 1fr;
-        width: 80vw;
-        height: 60dvh;
+        // width: 80vw;
+        // height: 60dvh;
+        width: 80%;
+        height: 60%;
         row-gap: 2rem;
         // column-gap: 10rem;
 
@@ -38,6 +40,18 @@ $xs: 450px;
             z-index: calc($zIndex-moon - 1);
             font-weight: 500;
             max-width: 40%;
+        }
+
+        @media (min-resolution: 1.5dppx) and (max-resolution: 1.74dppx) {
+            h1 {
+                margin-top: 4rem;
+            }
+        }
+
+        @media (min-resolution: 1.75dppx) and (max-resolution: 1.8dppx) and (min-width: $mobile-width) {
+            h1 {
+                margin-top: 10rem;
+            }
         }
 
         @media screen and (max-width: $mobile-width) {

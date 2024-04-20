@@ -4,14 +4,7 @@ export default function Loader() {
     return (
         <main className={styles.loader}>
             {/* <h1>Loading...</h1> */}
-            <div className={styles.wrapper}>
-                <div className={styles.circle}></div>
-                <div className={styles.circle}></div>
-                <div className={styles.circle}></div>
-                <div className={styles.shadow}></div>
-                <div className={styles.shadow}></div>
-                <div className={styles.shadow}></div>
-            </div>
+            <div className={styles.loader}></div>
         </main>
     )
 }

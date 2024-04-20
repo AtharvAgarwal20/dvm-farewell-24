@@ -9,6 +9,8 @@ import gridLeft from './assets/Grid left.png'
 import gridRight from './assets/Grid right.png'
 import shadowRectangle from './assets/Shadow rect.png'
 import shadowCentre from './assets/shadowCentre.png'
+import btnNext from './assets/btnNext.png'
+import btnPrev from './assets/btnPrev.png'
 import Card1 from './assets/Card1.png'
 
 import Loader from './components/Loader/Loader'
@@ -21,7 +23,7 @@ function App() {
   const seniorsArray = [Card1]
 
   useEffect(() => {
-    const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight, Card1]
+    const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight, Card1, btnNext, btnPrev]
 
     const loadAssets = async () => {
       try {
@@ -45,6 +47,13 @@ function App() {
 
     loadAssets();
   }, []);
+
+  function carouselPrev() {
+    console.log("Previous")
+  }
+  function carouselNext() {
+    console.log("Next")
+  }
 
   return (
     <>
@@ -101,7 +110,7 @@ function App() {
         <section className={styles.content}>
           <h1>Farewell<br />2024</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio iusto reiciendis eligendi id, amet distinctio nihil expedita sapiente enim sit perferendis facilis nisi quae dolorem iste. Earum vel aperiam optio.</p>
-          <Card senior={seniorsArray[seniorIndex]} />
+          <Card seniorCard={seniorsArray[seniorIndex]} nextBtn={btnNext} prevBtn={btnPrev} onPrev={carouselPrev} onNext={carouselNext} />
         </section>
         <footer>Made with ❤️ by DVM</footer>
       </main>

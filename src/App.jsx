@@ -8,6 +8,7 @@ import stars from './assets/Stars.png'
 import gridLeft from './assets/Grid left.png'
 import gridRight from './assets/Grid right.png'
 import shadowRectangle from './assets/Shadow rect.png'
+import shadowCentre from './assets/shadowCentre.png'
 
 import Loader from './components/Loader/Loader'
 import Card from './components/Card/Card'
@@ -16,7 +17,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight, shadowRectangle]
+    const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight]
 
     const loadAssets = async () => {
       try {
@@ -49,6 +50,12 @@ function App() {
         alt="shadow"
         draggable={false}
         className={styles.shadowRect}
+      />
+      <img
+        src={shadowCentre}
+        alt="shadow"
+        draggable={false}
+        className={styles.shadowCentre}
       />
       <img
         src={gridLeft}

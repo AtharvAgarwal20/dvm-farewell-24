@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 $mobile-width: 1040px;
-$zIndex-moon: 4;
+$zIndex-moon: 5;
 $xs: 450px;
 
 .page {
@@ -35,6 +35,7 @@ $xs: 450px;
         }
 
         p {
+            z-index: calc($zIndex-moon - 1);
             max-width: 40%;
         }
 
@@ -68,6 +69,14 @@ $xs: 450px;
         }
     }
 
+    @media screen and (max-width: $mobile-width) {
+        align-items: flex-start;
+
+        .content {
+            margin-top: 7rem;
+        }
+    }
+
     @media screen and (max-width: $xs) {
         align-items: flex-start;
 
@@ -75,6 +84,7 @@ $xs: 450px;
             margin-top: 35vw;
         }
     }
+
 }
 
 .gridLeft,
@@ -83,7 +93,8 @@ $xs: 450px;
 .bitsPilani,
 .shadowRect,
 .moon,
-.dvmLogo {
+.dvmLogo,
+.shadowCentre {
     position: fixed;
 }
 
@@ -106,21 +117,33 @@ $xs: 450px;
     right: 0px;
 }
 
-.stars,
 .shadowRect {
     width: 100vw;
     height: 100vh;
-    z-index: 1;
+    z-index: 2;
 }
 
 .stars {
-    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
 }
 
 @mixin alignCenterHorizontal() {
     left: 50%;
     transform: translateX(-50%);
 
+}
+
+.shadowCentre {
+    @include alignCenterHorizontal();
+    height: 100dvh;
+    width: 80vw;
+    z-index: 2;
+
+    @media screen and (max-width: $mobile-width) {
+        width: 60vw;
+    }
 }
 
 .bitsPilani {
@@ -132,7 +155,7 @@ $xs: 450px;
 
     @media screen and (max-width: $mobile-width) {
         transform: translateX(-49%);
-        height: 43dvh;
+        height: 46dvh;
         // bottom: -8%;
     }
 }
@@ -146,7 +169,7 @@ $xs: 450px;
     transform: translateX(-52%);
 
     @media screen and (max-width: $mobile-width) {
-        height: 80dvh;
+        height: 85dvh;
         bottom: -20%;
     }
 }
@@ -155,6 +178,10 @@ $xs: 450px;
     z-index: calc($zIndex-moon + 2);
     @include alignCenterHorizontal();
     top: 5dvh;
+
+    @media screen and (max-width: $mobile-width) {
+        width: 18rem;
+    }
 
     @media screen and (max-width: 450px) {
         width: 80vw;

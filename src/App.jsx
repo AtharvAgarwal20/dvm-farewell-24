@@ -70,15 +70,19 @@ function App() {
     if (seniorIndex > 0 && seniorIndex < seniorsImageArray.length) {
       transitionFunction(cardRef.current);
       transitionFunction(descRef.current)
-      setSeniorIndex(prevState => prevState - 1)
+      setTimeout(() => {
+        setSeniorIndex(prevState => prevState - 1)
+      }, 350)
     }
   }
 
   function carouselNext() {
     if (seniorIndex < seniorsImageArray.length - 1 && seniorIndex >= 0) {
       transitionFunction(cardRef.current);
-      transitionFunction(descRef.current)
-      setSeniorIndex(prevState => prevState + 1)
+      transitionFunction(descRef.current);
+      setTimeout(() => {
+        setSeniorIndex(prevState => prevState + 1)
+      }, 350)
     }
   }
 

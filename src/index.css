@@ -20,8 +20,8 @@ body {
     }
 }
 
-@media (min-resolution: 1.75dppx) and (max-resolution: 2dppx) and (min-width: 1040px) {
+/* @media (min-resolution: 1.75dppx) and (max-resolution: 2dppx) and (min-width: 1040px) {
     html {
         font-size: 8px;
     }
-}
+} */

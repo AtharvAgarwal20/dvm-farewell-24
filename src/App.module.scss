@@ -39,6 +39,7 @@ $xs: 450px;
         p {
             z-index: calc($zIndex-moon - 1);
             font-weight: 500;
+            font-size: 1rem;
             max-width: 40%;
         }
 

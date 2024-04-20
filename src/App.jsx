@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import * as styles from './App.module.scss'
+import gsap from "gsap"
 
 import moon from './assets/moon.png'
 import dvmLogo from './assets/dvmLogoName.svg'
@@ -22,6 +23,9 @@ function App() {
 
   const seniorsImageArray = [Card1, Card1, Card1]
   const seniorsDescriptionArray = ["desc 1", "desc 2", "desc 3"]
+
+  const cardRef = useRef();
+  const descRef = useRef();
 
   useEffect(() => {
     const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight, Card1, btnNext, btnPrev]
@@ -49,14 +53,31 @@ function App() {
     loadAssets();
   }, []);
 
+  function transitionFunction(element) {
+    gsap.to(element, {
+      translateY: '2rem',
+      opacity: '0'
+    })
+    setTimeout(() => {
+      gsap.to(element, {
+        translateY: '0rem',
+        opacity: '1'
+      })
+    }, 700)
+  }
+
   function carouselPrev() {
     if (seniorIndex > 0 && seniorIndex < seniorsImageArray.length) {
+      transitionFunction(cardRef.current);
+      transitionFunction(descRef.current)
       setSeniorIndex(prevState => prevState - 1)
     }
   }
 
   function carouselNext() {
     if (seniorIndex < seniorsImageArray.length - 1 && seniorIndex >= 0) {
+      transitionFunction(cardRef.current);
+      transitionFunction(descRef.current)
       setSeniorIndex(prevState => prevState + 1)
     }
   }
@@ -115,8 +136,15 @@ function App() {
         />
         <section className={styles.content}>
           <h1>Farewell<br />2024</h1>
-          <p>{seniorsDescriptionArray[seniorIndex]}</p>
-          <Card seniorCard={seniorsImageArray[seniorIndex]} nextBtn={btnNext} prevBtn={btnPrev} onPrev={carouselPrev} onNext={carouselNext} />
+          <p ref={descRef}>{seniorsDescriptionArray[seniorIndex]}</p>
+          <Card
+            seniorCard={seniorsImageArray[seniorIndex]}
+            nextBtn={btnNext}
+            prevBtn={btnPrev}
+            onPrev={carouselPrev}
+            onNext={carouselNext}
+            ref={cardRef}
+          />
         </section>
         <footer>Made with ❤️ by DVM</footer>
       </main>

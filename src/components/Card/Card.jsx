@@ -1,6 +1,7 @@
+import { forwardRef } from 'react'
 import * as styles from './Card.module.scss'
 
-export default function Card({ seniorCard, prevBtn, nextBtn, onPrev, onNext }) {
+const Card = forwardRef(function ({ seniorCard, prevBtn, nextBtn, onPrev, onNext }, ref) {
 
     return (
         <div className={styles.cardContainer}>
@@ -11,12 +12,14 @@ export default function Card({ seniorCard, prevBtn, nextBtn, onPrev, onNext }) {
                     className={styles.prev}
                     draggable={false}
                     onClick={onPrev}
+                    style={{ zIndex: '500' }}
                 />
                 <img
                     src={seniorCard}
                     alt="senior"
                     draggable={false}
                     className={styles.seniorCard}
+                    ref={ref}
                 />
                 <img
                     src={nextBtn}
@@ -24,8 +27,11 @@ export default function Card({ seniorCard, prevBtn, nextBtn, onPrev, onNext }) {
                     className={styles.next}
                     draggable={false}
                     onClick={onNext}
+                    style={{ zIndex: '500' }}
                 />
             </div>
         </div>
     )
-}
+})
+
+export default Card;

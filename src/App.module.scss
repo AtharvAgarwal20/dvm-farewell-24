@@ -89,7 +89,7 @@ $xs: 450px;
 
     footer {
         visibility: hidden;
-        z-index: 1000;
+        z-index: 100;
         font-weight: 500;
         font-size: 16px;
         position: fixed;
@@ -97,6 +97,10 @@ $xs: 450px;
 
         @media screen and (max-width: $mobile-width) {
             visibility: visible;
+        }
+
+        @media screen and (max-height: 785px) {
+            bottom: 0.5rem;
         }
     }
 

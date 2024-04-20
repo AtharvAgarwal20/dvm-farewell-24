@@ -20,7 +20,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [seniorIndex, setSeniorIndex] = useState(0)
 
-  const seniorsArray = [Card1]
+  const seniorsImageArray = [Card1, Card1, Card1]
+  const seniorsDescriptionArray = ["desc 1", "desc 2", "desc 3"]
 
   useEffect(() => {
     const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight, Card1, btnNext, btnPrev]
@@ -49,10 +50,15 @@ function App() {
   }, []);
 
   function carouselPrev() {
-    console.log("Previous")
+    if (seniorIndex > 0 && seniorIndex < seniorsImageArray.length) {
+      setSeniorIndex(prevState => prevState - 1)
+    }
   }
+
   function carouselNext() {
-    console.log("Next")
+    if (seniorIndex < seniorsImageArray.length - 1 && seniorIndex >= 0) {
+      setSeniorIndex(prevState => prevState + 1)
+    }
   }
 
   return (
@@ -109,8 +115,8 @@ function App() {
         />
         <section className={styles.content}>
           <h1>Farewell<br />2024</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio iusto reiciendis eligendi id, amet distinctio nihil expedita sapiente enim sit perferendis facilis nisi quae dolorem iste. Earum vel aperiam optio.</p>
-          <Card seniorCard={seniorsArray[seniorIndex]} nextBtn={btnNext} prevBtn={btnPrev} onPrev={carouselPrev} onNext={carouselNext} />
+          <p>{seniorsDescriptionArray[seniorIndex]}</p>
+          <Card seniorCard={seniorsImageArray[seniorIndex]} nextBtn={btnNext} prevBtn={btnPrev} onPrev={carouselPrev} onNext={carouselNext} />
         </section>
         <footer>Made with ❤️ by DVM</footer>
       </main>

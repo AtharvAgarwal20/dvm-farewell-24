@@ -102,6 +102,10 @@ $xs: 450px;
         @media screen and (max-height: 785px) {
             bottom: 0.5rem;
         }
+
+        @media screen and (max-height: 770px) {
+            bottom: clamp(0.5rem, 2dvh, 2rem);
+        }
     }
 
 }

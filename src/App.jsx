@@ -67,21 +67,35 @@ function App() {
   }
 
   function carouselPrev() {
-    if (seniorIndex > 0 && seniorIndex < seniorsImageArray.length) {
+    if (seniorIndex >= 0 && seniorIndex < seniorsImageArray.length) {
       transitionFunction(cardRef.current);
       transitionFunction(descRef.current)
       setTimeout(() => {
-        setSeniorIndex(prevState => prevState - 1)
+        setSeniorIndex(prevState => {
+          if (prevState === 0) {
+            return seniorsImageArray.length - 1
+          }
+          else {
+            return prevState - 1
+          }
+        })
       }, 350)
     }
   }
 
   function carouselNext() {
-    if (seniorIndex < seniorsImageArray.length - 1 && seniorIndex >= 0) {
+    if (seniorIndex < seniorsImageArray.length && seniorIndex >= 0) {
       transitionFunction(cardRef.current);
       transitionFunction(descRef.current);
       setTimeout(() => {
-        setSeniorIndex(prevState => prevState + 1)
+        setSeniorIndex(prevState => {
+          if (prevState === seniorsImageArray.length - 1) {
+            return 0
+          }
+          else {
+            return prevState + 1
+          }
+        })
       }, 350)
     }
   }

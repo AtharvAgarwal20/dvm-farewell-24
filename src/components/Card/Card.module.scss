@@ -8,6 +8,11 @@ $xs: 450px;
     transform: translateY(-50%) translateX($x-translation);
     width: auto;
     height: 13.6%;
+    transition: transform 100ms ease-in-out;
+
+    &:hover {
+        transform: translateY(-50%) translateX($x-translation) scale(1.25);
+    }
 }
 
 .cardContainer {

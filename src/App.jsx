@@ -17,6 +17,7 @@ import Card2 from './assets/Card2.png'
 
 import Loader from './components/Loader/Loader'
 import Card from './components/Card/Card'
+import ShootingStars from './components/ShootingStars/ShootingStars'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -134,6 +135,7 @@ function App() {
         draggable={false}
         className={styles.stars}
       />
+      <ShootingStars starCount={10} />
       <img
         src={bitsPilani}
         alt="clocktower"

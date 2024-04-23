@@ -7,7 +7,7 @@ $xs: 450px;
 .page {
     background-color: rgb(0, 0, 30);
     width: 100vw;
-    height: 100dvh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,7 @@ $xs: 450px;
         grid-template-columns: 1fr 0.86fr;
         grid-template-rows: 1fr 1fr;
         // width: 80vw;
-        // height: 60dvh;
+        // height: 60vh;
         width: 80%;
         height: 60%;
         row-gap: 2rem;
@@ -135,7 +135,7 @@ $xs: 450px;
 .gridLeft,
 .gridRight {
     width: auto;
-    height: 100dvh;
+    height: 100vh;
     z-index: 1;
 
     @media screen and (max-width: $mobile-width) {
@@ -176,7 +176,7 @@ $xs: 450px;
 
 .shadowCentre {
     @include alignCenterHorizontal();
-    height: 100dvh;
+    height: 100vh;
     width: 80vw;
     z-index: 2;
 
@@ -190,7 +190,7 @@ $xs: 450px;
 }
 
 .bitsPilani {
-    height: 60dvh;
+    height: 60vh;
     width: auto;
     bottom: 0px;
     z-index: calc($zIndex-moon + 1);
@@ -198,12 +198,12 @@ $xs: 450px;
 
     @media screen and (max-width: $mobile-width) {
         transform: translateX(-49%) translateY(0.5rem);
-        height: 46dvh;
+        height: 46vh;
     }
 }
 
 .moon {
-    height: 90dvh;
+    height: 90vh;
     width: auto;
     z-index: $zIndex-moon;
     bottom: 1%;
@@ -211,7 +211,7 @@ $xs: 450px;
     transform: translateX(-52%);
 
     @media screen and (max-width: $mobile-width) {
-        height: 85dvh;
+        height: 85vh;
         bottom: -20%;
     }
 }
@@ -219,7 +219,7 @@ $xs: 450px;
 .dvmLogo {
     z-index: calc($zIndex-moon + 2);
     @include alignCenterHorizontal();
-    top: 5dvh;
+    top: 5vh;
 
     @media screen and (max-width: $mobile-width) {
         width: 18rem;

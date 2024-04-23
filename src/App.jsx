@@ -14,6 +14,7 @@ import btnNext from './assets/btnNext.png'
 import btnPrev from './assets/btnPrev.png'
 import Card1 from './assets/Card1.png'
 import Card2 from './assets/Card2.png'
+import person from './assets/name+img.png'
 
 import Loader from './components/Loader/Loader'
 import Card from './components/Card/Card'
@@ -23,14 +24,14 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [seniorIndex, setSeniorIndex] = useState(0)
 
-  const seniorsImageArray = [Card1, Card2, Card2]
+  const seniorsImageArray = [person, person, person]
   const seniorsDescriptionArray = ["desc 1", "desc 2", "desc 3"]
 
   const cardRef = useRef();
   const descRef = useRef();
 
   useEffect(() => {
-    const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight, Card1, Card2, btnNext, btnPrev]
+    const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight, Card1, Card2, person, btnNext, btnPrev]
 
     const loadAssets = async () => {
       try {

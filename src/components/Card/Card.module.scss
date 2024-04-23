@@ -1,10 +1,10 @@
 $mobile-width: 1040px;
 $xs: 450px;
 
-@mixin button-styles($x-translation) {
+@mixin button-styles($x-translation, $sm-x-trans) {
     cursor: pointer;
     position: absolute;
-    top: 39%;
+    top: 38%;
     transform: translateY(-50%) translateX($x-translation);
     width: auto;
     height: 13.6%;
@@ -12,6 +12,11 @@ $xs: 450px;
 
     &:hover {
         transform: translateY(-50%) translateX($x-translation) scale(1.25);
+    }
+
+    @media screen and (max-width: $mobile-width) {
+        top: 31%;
+        transform: translateX($sm-x-trans);
     }
 }
 
@@ -33,15 +38,29 @@ $xs: 450px;
         aspect-ratio: 426.51 / 513.6;
 
         .next {
-            @include button-styles(-70%);
+            @include button-styles(540%, 235%);
         }
 
         .prev {
-            @include button-styles(-10%);
+            @include button-styles(-20%, -332%);
         }
 
-        .seniorCard {
+        .cardBody {
+            position: absolute;
+            aspect-ratio: 450 / 547.5;
+            top: 0;
+            backdrop-filter: blur(15px);
+            background-color: rgba(255, 255, 255, 0.245);
             height: 100%;
+            width: auto;
+            clip-path: url(#card-body-mask);
+        }
+
+        .cardContent {
+            position: absolute;
+            height: 93%;
+            top: calc(12.5 / 547.5 * 100%);
+            left: calc(12.5 / 450 * 100%);
             width: auto;
         }
     }

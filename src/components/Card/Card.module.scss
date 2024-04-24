@@ -59,12 +59,25 @@ $xs: 450px;
             position: absolute;
             aspect-ratio: 450 / 547.5;
             top: 0;
+            height: 100%;
             backdrop-filter: blur(15px);
             filter: drop-shadow(-3px 2px 14px rgba(0, 0, 30, 0.25));
             background-color: rgba(255, 255, 255, 0.245);
-            height: 100%;
             width: auto;
             clip-path: url(#card-body-mask);
+        }
+
+        .cardBorder {
+            position: absolute;
+            aspect-ratio: 450 / 547.5;
+            height: 100%;
+            top: 0;
+            width: auto;
+            z-index: 400;
+
+            @media screen and (max-width: $mobile-width) {
+                transform: translateX(-50%);
+            }
         }
 
         .cardContent {

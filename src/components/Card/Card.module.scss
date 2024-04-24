@@ -17,6 +17,10 @@ $xs: 450px;
     @media screen and (max-width: $mobile-width) {
         top: 31%;
         transform: translateX($sm-x-trans);
+
+        &:hover {
+            transform: translateX($sm-x-trans) scale(1.25);
+        }
     }
 }
 
@@ -37,12 +41,18 @@ $xs: 450px;
         width: auto;
         aspect-ratio: 426.51 / 513.6;
 
+        .animationWrapper {
+            height: 100%;
+            width: auto;
+            aspect-ratio: 450 / 547.5;
+        }
+
         .next {
-            @include button-styles(540%, 235%);
+            @include button-styles(545%, 235%);
         }
 
         .prev {
-            @include button-styles(-20%, -332%);
+            @include button-styles(-25%, -332%);
         }
 
         .cardBody {

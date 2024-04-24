@@ -71,13 +71,12 @@ $xs: 450px;
             position: absolute;
             aspect-ratio: 450 / 547.5;
             height: 100%;
-            top: 0;
+            top: 0.1%;
+            left: 0;
+            // top: 0.2%;
+            // left: 0.1%;
             width: auto;
             z-index: 400;
-
-            @media screen and (max-width: $mobile-width) {
-                transform: translateX(-50%);
-            }
         }
 
         .cardContent {

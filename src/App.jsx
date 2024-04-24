@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import * as styles from './App.module.scss'
 import gsap from "gsap"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 import moon from './assets/moon.png'
 import dvmLogo from './assets/dvmLogoName.svg'
@@ -105,6 +106,7 @@ function App() {
   return (
     <>
       {isLoading && <Loader />}
+      <SpeedInsights />
       <img
         src={shadowRectangle}
         alt="shadow"

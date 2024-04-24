@@ -19,8 +19,8 @@ const Card = forwardRef(function ({ seniorCard, prevBtn, nextBtn, onPrev, onNext
                 <ReactParallaxTilt
                     tiltReverse={true}
                     gyroscope={true}
-                    tiltAngleXInitial={window.innerWidth < 1040 ? 20 : null}
-                // trackOnWindow={true}
+                    trackOnWindow={window.innerWidth > 1040 ? true : false}
+                    perspective={500}
                 >
                     <div className={styles.animationWrapper} ref={ref}>
                         <svg width={0} height={0} className={styles.svg}>

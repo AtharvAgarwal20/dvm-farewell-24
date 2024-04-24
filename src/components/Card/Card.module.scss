@@ -60,7 +60,7 @@ $xs: 450px;
             aspect-ratio: 450 / 547.5;
             top: 0;
             height: 100%;
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px) !important;
             filter: drop-shadow(-3px 2px 14px rgba(0, 0, 30, 0.25));
             background-color: rgba(255, 255, 255, 0.245);
             width: auto;

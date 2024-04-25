@@ -45,12 +45,6 @@ $xs: 450px;
             height: 100%;
             width: auto;
             aspect-ratio: 450 / 547.5;
-        }
-
-        .mask2 {
-            height: 100%;
-            width: auto;
-            aspect-ratio: 450 / 547.5;
             clip-path: url(#card-body-mask);
             backdrop-filter: blur(15px) !important;
         }

@@ -233,10 +233,10 @@ $xs: 450px;
     top: 5vh;
 
     @media screen and (max-width: $mobile-width) {
-        width: 18rem;
+        width: 15rem;
     }
 
     @media screen and (max-width: $xs) {
-        width: 13rem;
+        width: 10rem;
     }
 }

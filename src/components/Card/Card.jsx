@@ -20,7 +20,7 @@ const Card = forwardRef(function ({ seniorCard, prevBtn, nextBtn, onPrev, onNext
                     tiltReverse={true}
                     gyroscope={true}
                     trackOnWindow={window.innerWidth > 1040 ? true : false}
-                    perspective={500}
+                    perspective={700}
                 >
                     <div className={styles.animationWrapper} ref={ref}>
                         <svg width={0} height={0} className={styles.svg}>

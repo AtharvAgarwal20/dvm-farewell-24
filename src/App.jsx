@@ -72,7 +72,9 @@ function App() {
 
   function carouselPrev() {
     if (seniorIndex >= 0 && seniorIndex < seniorsImageArray.length) {
-      transitionFunction(cardRef.current);
+      for (let transitionTarget of cardRef.current.children[0].children) {
+        transitionFunction(transitionTarget)
+      }
       transitionFunction(descRef.current)
       setTimeout(() => {
         setSeniorIndex(prevState => {
@@ -89,7 +91,9 @@ function App() {
 
   function carouselNext() {
     if (seniorIndex < seniorsImageArray.length && seniorIndex >= 0) {
-      transitionFunction(cardRef.current);
+      for (let transitionTarget of cardRef.current.children[0].children) {
+        transitionFunction(transitionTarget)
+      }
       transitionFunction(descRef.current);
       setTimeout(() => {
         setSeniorIndex(prevState => {

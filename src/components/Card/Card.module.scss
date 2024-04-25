@@ -49,6 +49,14 @@ $xs: 450px;
             backdrop-filter: blur(15px) !important;
         }
 
+        .btnAnimationWrapper {
+            position: absolute;
+            height: 100%;
+            width: auto;
+            aspect-ratio: 450 / 547.5;
+            z-index: 500;
+        }
+
         .next {
             @include button-styles(545%, 235%);
         }

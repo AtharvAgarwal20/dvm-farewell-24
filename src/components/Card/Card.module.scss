@@ -10,8 +10,10 @@ $xs: 450px;
     height: 13.6%;
     transition: transform 300ms ease-in-out;
 
-    &:hover {
-        transform: translateY(-50%) translateX($x-translation) scale(1.25);
+    @media screen and (min-width: $mobile-width) {
+        &:hover {
+            transform: translateY(-50%) translateX($x-translation) scale(1.25);
+        }
     }
 
     @media screen and (max-width: $mobile-width) {

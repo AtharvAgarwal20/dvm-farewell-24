@@ -203,27 +203,28 @@ $xs: 450px;
 }
 
 .moon {
-    height: 90vh;
+    height: 100vh;
     width: auto;
     z-index: $zIndex-moon;
-    bottom: 1%;
+    bottom: -14%;
     @include alignCenterHorizontal();
-    transform: translateX(-52%);
-    // animation: moonRotate 10s linear 0s infinite normal;
+    transform: translateX(-51.5%);
+    animation: moonRotate 180s linear 0s infinite normal;
 
     @media screen and (max-width: $mobile-width) {
-        height: 85vh;
-        bottom: -20%;
+        height: 95vh;
+        bottom: -35%;
+        left: 51%;
     }
 }
 
 @keyframes moonRotate {
     0% {
-        transform: translateX(-52%) rotate(0deg);
+        transform: translateX(-51.5%) rotate(0deg);
     }
 
     100% {
-        transform: translateX(-52%) rotate(360deg);
+        transform: translateX(-51.5%) rotate(360deg);
     }
 }
 

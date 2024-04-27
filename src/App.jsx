@@ -26,10 +26,8 @@ function App() {
   const [seniorIndex, setSeniorIndex] = useState(0)
 
   const seniorsImageArray = [person1, person2, person3]
-  const seniorsDescriptionArray = ["desc 1", "desc 2", "desc 3"]
 
   const cardRef = useRef();
-  const descRef = useRef();
 
   useEffect(() => {
     const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight, person1, person2, person3, btnNext, btnPrev]
@@ -75,7 +73,6 @@ function App() {
       for (let transitionTarget of cardRef.current.children[0].children) {
         transitionFunction(transitionTarget)
       }
-      transitionFunction(descRef.current)
       setTimeout(() => {
         setSeniorIndex(prevState => {
           if (prevState === 0) {
@@ -94,7 +91,6 @@ function App() {
       for (let transitionTarget of cardRef.current.children[0].children) {
         transitionFunction(transitionTarget)
       }
-      transitionFunction(descRef.current);
       setTimeout(() => {
         setSeniorIndex(prevState => {
           if (prevState === seniorsImageArray.length - 1) {
@@ -164,7 +160,7 @@ function App() {
         />
         <section className={styles.content}>
           <h1>Farewell<br />2024</h1>
-          <p ref={descRef}>{seniorsDescriptionArray[seniorIndex]}</p>
+          <p>Your vibes made our time here awesome. Take all the good stuff with you - memories, laughs, and a ton of wisdom. The world's lucky to get you. Cheers to your next adventure!</p>
           <Card
             seniorCard={seniorsImageArray[seniorIndex]}
             nextBtn={btnNext}

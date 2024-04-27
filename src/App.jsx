@@ -14,8 +14,10 @@ import shadowCentre from "./assets/shadowCentre.png";
 import btnNext from "./assets/btnNext.png";
 import btnPrev from "./assets/btnPrev.png";
 import app1 from "./assets/app1.png";
-import app2 from "./assets/app2.png";
-import app3 from "./assets/app3.png";
+import app4 from "./assets/app4.png";
+import game1 from "./assets/game1.png";
+import game2 from "./assets/game2.png";
+import back2 from "./assets/back2.png";
 import back1 from "./assets/harsh_rathi_back.png";
 // import des1 from './assets/des1.png'
 // import des2 from './assets/des2.png'
@@ -35,14 +37,16 @@ function App() {
 
   const seniorsImageArray = [
     app1,
-    app2,
-    app3,
+    app4,
+    game1,
+    game2,
     front1,
     des1Alt,
     des2Alt,
     vid1,
     vid2,
     back1,
+    back2,
   ];
 
   const cardRef = useRef();
@@ -56,8 +60,10 @@ function App() {
       gridLeft,
       gridRight,
       app1,
-      app2,
-      app3,
+      app4,
+      game1,
+      game2,
+      back2,
       front1,
       des1Alt,
       des2Alt,

@@ -91,6 +91,7 @@ $xs: 450px;
 
         .content {
             margin-top: 7rem;
+            row-gap: 1rem;
         }
     }
 
@@ -183,10 +184,6 @@ $xs: 450px;
     @media screen and (max-width: $mobile-width) {
         width: 60vw;
     }
-
-    // @media screen and (max-width: $xs) {
-    //     width: 20vw;
-    // }
 }
 
 .bitsPilani {

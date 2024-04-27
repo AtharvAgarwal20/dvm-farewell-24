@@ -13,9 +13,14 @@ import shadowRectangle from './assets/Shadow rect.png'
 import shadowCentre from './assets/shadowCentre.png'
 import btnNext from './assets/btnNext.png'
 import btnPrev from './assets/btnPrev.png'
-import person1 from './assets/person1.png'
-import person2 from './assets/person2.png'
-import person3 from './assets/person3.png'
+import app1 from './assets/app1.png'
+import app2 from './assets/app2.png'
+import app3 from './assets/app3.png'
+import des1 from './assets/des1.png'
+import des2 from './assets/des2.png'
+import front1 from './assets/front1.png'
+import vid1 from './assets/vid1.png'
+import vid2 from './assets/vid2.png'
 
 import Loader from './components/Loader/Loader'
 import Card from './components/Card/Card'
@@ -25,12 +30,12 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
   const [seniorIndex, setSeniorIndex] = useState(0)
 
-  const seniorsImageArray = [person1, person2, person3]
+  const seniorsImageArray = [app1, app2, app3, front1, des1, des2, vid1, vid2]
 
   const cardRef = useRef();
 
   useEffect(() => {
-    const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight, person1, person2, person3, btnNext, btnPrev]
+    const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight, app1, app2, app3, front1, des1, des2, vid1, vid2, btnNext, btnPrev]
 
     const loadAssets = async () => {
       try {

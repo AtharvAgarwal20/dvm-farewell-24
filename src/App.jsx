@@ -1,43 +1,72 @@
-import { useEffect, useState, useRef } from 'react'
-import * as styles from './App.module.scss'
-import gsap from "gsap"
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import { useEffect, useState, useRef } from "react";
+import * as styles from "./App.module.scss";
+import gsap from "gsap";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
-import moon from './assets/moon.png'
-import dvmLogo from './assets/dvmLogoName.svg'
-import bitsPilani from './assets/bitspilaninight.png'
-import stars from './assets/Stars.png'
-import gridLeft from './assets/Grid left.png'
-import gridRight from './assets/Grid right.png'
-import shadowRectangle from './assets/Shadow rect.png'
-import shadowCentre from './assets/shadowCentre.png'
-import btnNext from './assets/btnNext.png'
-import btnPrev from './assets/btnPrev.png'
-import app1 from './assets/app1.png'
-import app2 from './assets/app2.png'
-import app3 from './assets/app3.png'
+import moon from "./assets/moon.png";
+import dvmLogo from "./assets/dvmLogoName.svg";
+import bitsPilani from "./assets/bitspilaninight.png";
+import stars from "./assets/Stars.png";
+import gridLeft from "./assets/Grid left.png";
+import gridRight from "./assets/Grid right.png";
+import shadowRectangle from "./assets/Shadow rect.png";
+import shadowCentre from "./assets/shadowCentre.png";
+import btnNext from "./assets/btnNext.png";
+import btnPrev from "./assets/btnPrev.png";
+import app1 from "./assets/app1.png";
+import app2 from "./assets/app2.png";
+import app3 from "./assets/app3.png";
+import back1 from "./assets/harsh_rathi_back.png";
 // import des1 from './assets/des1.png'
 // import des2 from './assets/des2.png'
-import des1Alt from './assets/des1Alt.png'
-import des2Alt from './assets/des2Alt.png'
-import front1 from './assets/front1.png'
-import vid1 from './assets/vid1.png'
-import vid2 from './assets/vid2.png'
+import des1Alt from "./assets/des1Alt.png";
+import des2Alt from "./assets/des2Alt.png";
+import front1 from "./assets/front1.png";
+import vid1 from "./assets/vid1.png";
+import vid2 from "./assets/vid2.png";
 
-import Loader from './components/Loader/Loader'
-import Card from './components/Card/Card'
-import ShootingStars from './components/ShootingStars/ShootingStars'
+import Loader from "./components/Loader/Loader";
+import Card from "./components/Card/Card";
+import ShootingStars from "./components/ShootingStars/ShootingStars";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
-  const [seniorIndex, setSeniorIndex] = useState(0)
+  const [isLoading, setIsLoading] = useState(true);
+  const [seniorIndex, setSeniorIndex] = useState(0);
 
-  const seniorsImageArray = [app1, app2, app3, front1, des1Alt, des2Alt, vid1, vid2]
+  const seniorsImageArray = [
+    app1,
+    app2,
+    app3,
+    front1,
+    des1Alt,
+    des2Alt,
+    vid1,
+    vid2,
+    back1,
+  ];
 
   const cardRef = useRef();
 
   useEffect(() => {
-    const assets = [moon, dvmLogo, bitsPilani, stars, gridLeft, gridRight, app1, app2, app3, front1, des1Alt, des2Alt, vid1, vid2, btnNext, btnPrev]
+    const assets = [
+      moon,
+      dvmLogo,
+      bitsPilani,
+      stars,
+      gridLeft,
+      gridRight,
+      app1,
+      app2,
+      app3,
+      front1,
+      des1Alt,
+      des2Alt,
+      back1,
+      vid1,
+      vid2,
+      btnNext,
+      btnPrev,
+    ];
 
     const loadAssets = async () => {
       try {
@@ -64,50 +93,48 @@ function App() {
 
   function transitionFunction(element) {
     gsap.to(element, {
-      translateY: '2rem',
-      opacity: '0'
-    })
+      translateY: "2rem",
+      opacity: "0",
+    });
     setTimeout(() => {
       gsap.to(element, {
-        translateY: '0rem',
-        opacity: '1'
-      })
-    }, 700)
+        translateY: "0rem",
+        opacity: "1",
+      });
+    }, 700);
   }
 
   function carouselPrev() {
     if (seniorIndex >= 0 && seniorIndex < seniorsImageArray.length) {
       for (let transitionTarget of cardRef.current.children[0].children) {
-        transitionFunction(transitionTarget)
+        transitionFunction(transitionTarget);
       }
       setTimeout(() => {
-        setSeniorIndex(prevState => {
+        setSeniorIndex((prevState) => {
           if (prevState === 0) {
-            return seniorsImageArray.length - 1
+            return seniorsImageArray.length - 1;
+          } else {
+            return prevState - 1;
           }
-          else {
-            return prevState - 1
-          }
-        })
-      }, 350)
+        });
+      }, 350);
     }
   }
 
   function carouselNext() {
     if (seniorIndex < seniorsImageArray.length && seniorIndex >= 0) {
       for (let transitionTarget of cardRef.current.children[0].children) {
-        transitionFunction(transitionTarget)
+        transitionFunction(transitionTarget);
       }
       setTimeout(() => {
-        setSeniorIndex(prevState => {
+        setSeniorIndex((prevState) => {
           if (prevState === seniorsImageArray.length - 1) {
-            return 0
+            return 0;
+          } else {
+            return prevState + 1;
           }
-          else {
-            return prevState + 1
-          }
-        })
-      }, 350)
+        });
+      }, 350);
     }
   }
 
@@ -139,12 +166,7 @@ function App() {
         draggable={false}
         className={styles.gridRight}
       />
-      <img
-        src={stars}
-        alt="stars"
-        draggable={false}
-        className={styles.stars}
-      />
+      <img src={stars} alt="stars" draggable={false} className={styles.stars} />
       <ShootingStars starCount={10} />
       <img
         src={bitsPilani}
@@ -152,12 +174,7 @@ function App() {
         draggable={false}
         className={styles.bitsPilani}
       />
-      <img
-        src={moon}
-        alt="moon"
-        draggable={false}
-        className={styles.moon}
-      />
+      <img src={moon} alt="moon" draggable={false} className={styles.moon} />
       <main className={styles.page}>
         <img
           src={dvmLogo}
@@ -166,8 +183,16 @@ function App() {
           className={styles.dvmLogo}
         />
         <section className={styles.content}>
-          <h1>Farewell<br />2024</h1>
-          <p>Your vibes made our time here awesome. Take all the good stuff with you - memories, laughs, and a ton of wisdom. The world's lucky to get you. Cheers to your next adventure!</p>
+          <h1>
+            Farewell
+            <br />
+            2024
+          </h1>
+          <p>
+            Your vibes made our time here awesome. Take all the good stuff with
+            you - memories, laughs, and a ton of wisdom. The world&apos;s lucky
+            to get you. Cheers to your next adventure!
+          </p>
           <Card
             seniorCard={seniorsImageArray[seniorIndex]}
             nextBtn={btnNext}
@@ -180,7 +205,7 @@ function App() {
         <footer>Made with ❤️ by DVM</footer>
       </main>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -12,6 +12,7 @@
   "dependencies": {
     "@vercel/speed-insights": "^1.0.10",
     "gsap": "^3.12.5",
+    "million": "^3.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-parallax-tilt": "^1.7.222",

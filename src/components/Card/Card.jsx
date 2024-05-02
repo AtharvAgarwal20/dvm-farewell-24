@@ -13,7 +13,7 @@ const Card = forwardRef(function (
         <ReactParallaxTilt
           tiltReverse={true}
           trackOnWindow={window.innerWidth > 1040}
-          // gyroscope={true}
+          gyroscope={true}
           tiltEnable={window.innerWidth > 1040}
           perspective={3000}
         >
@@ -24,7 +24,7 @@ const Card = forwardRef(function (
               className={styles.prev}
               draggable={false}
               onClick={onPrev}
-              // style={{ zIndex: '500' }}
+            // style={{ zIndex: '500' }}
             />
             <img
               src={nextBtn}
@@ -32,7 +32,7 @@ const Card = forwardRef(function (
               className={styles.next}
               draggable={false}
               onClick={onNext}
-              // style={{ zIndex: '500' }}
+            // style={{ zIndex: '500' }}
             />
           </div>
           <div className={styles.animationWrapper}>

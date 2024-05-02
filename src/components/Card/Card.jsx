@@ -14,7 +14,7 @@ const Card = forwardRef(function (
           tiltReverse={true}
           trackOnWindow={window.innerWidth > 1040}
           gyroscope={true}
-          tiltEnable={window.innerWidth > 1040}
+          // tiltEnable={window.innerWidth > 1040}
           perspective={3000}
         >
           <div className={styles.btnAnimationWrapper}>
